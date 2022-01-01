@@ -5,7 +5,7 @@ namespace Spyrmp\WorkingDays\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Carbon;
-use Spyrmp\WorkingDays\WorkingDays;
+use WorkingDays;
 
 
 class IsWorkingDayValidation extends AbstractValidation implements Rule
