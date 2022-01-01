@@ -5,7 +5,7 @@ namespace Spyrmp\WorkingDays\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Carbon;
-use WorkingDays;
+use Spyrmp\WorkingDays\WorkingDays;
 
 
 class IsWorkingDayValidation extends AbstractValidation implements Rule
@@ -21,8 +21,6 @@ class IsWorkingDayValidation extends AbstractValidation implements Rule
     {
 
         $dateValue = Carbon::createFromFormat($this->format, $value);
-
-        $this->attribute = $attribute;
         return WorkingDays::isWorkingDay($dateValue);
 
     }

@@ -16,7 +16,7 @@ abstract class AbstractValidation
 
     public function __construct()
     {
-        $this->format = config("working-day.format");
+        $this->format = config("working-days.format");
     }
 
 
