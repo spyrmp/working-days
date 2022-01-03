@@ -24,8 +24,8 @@ class WorkingDays
      */
     public function __construct($config)
     {
-        $this->workingDays = $config->get('working_day.working');
-        $this->nonWorkingDay = $config->get('working_day.non_working');
+        $this->workingDays = $config->get('working-days.working');
+        $this->nonWorkingDay = $config->get('working-days.non_working');
     }
 
     /**
@@ -55,7 +55,7 @@ class WorkingDays
         for ($i = 0; $i < 7; $i++) {
             $currentDay = $carbon->startOfWeek()->addDay($i);
             if ($this->isNonWorkingDay($currentDay)) {
-                $results[] = $carbon->startOfWeek()->addDay($i);
+                $results[] = $currentDay;
             }
         }
         return $results;
@@ -71,7 +71,7 @@ class WorkingDays
         for ($i = 0; $i < 7; $i++) {
             $currentDay = $carbon->startOfWeek()->addDay($i);
             if ($this->isWorkingDay($currentDay)) {
-                $results[] = $carbon->startOfWeek()->addDay($i);
+                $results[] = $currentDay;
             }
         }
         return $results;
